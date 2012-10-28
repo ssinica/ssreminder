@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>ssremainder</application>
+  <version>1</version>
+
+  <threadsafe>true</threadsafe>
+
+  <static-files>
+    <include path="/**.cache.html*" expiration="100d" />
+    <include path="/**.jpg" expiration="100d" />
+    <include path="/**.png" expiration="100d" />
+    <include path="/**.gif" expiration="100d" />
+    <include path="/**.ico" expiration="100d" />
+    <include path="/**.css" expiration="100d" />    
+    <include path="/**hosted.html" expiration="100d" />    
+    <include path="/**.gwt.rpc" expiration="100d" />    
+    <include path="/js/api.js" expiration="100d" />
+    <include path="/js/datepicker.js" expiration="100d" />
+    <include path="/js/jquery.js" expiration="100d" />
+    <include path="/js/remainder.js" expiration="100d" />    
+  </static-files>
+
+  <system-properties>
+    <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+  </system-properties>
+ 
+
+</appengine-web-app>

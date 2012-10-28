@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/cron/checkusers</url>
+    <description>Each hour checks if it is time to send email notifications for users.</description>
+    <schedule>every 1 hours synchronized</schedule>
+  </cron>  
+</cronentries>

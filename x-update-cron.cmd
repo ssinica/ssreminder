@@ -1,0 +1,1 @@
+C:\my\soft\appengine-java-sdk-1.7.2.1\bin\appcfg update_cron C:\my\workspace\ssreminder\build

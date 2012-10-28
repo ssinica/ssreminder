@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+		
+	<servlet>
+        <servlet-name>ActionsServlet</servlet-name>
+        <servlet-class>com.ss.reminder.server.ActionsServlet</servlet-class>
+    </servlet>   
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>com.ss.reminder.server.WelcomeServlet</servlet-class>
+    </servlet>    
+    <servlet>
+        <servlet-name>NoCacheServlet</servlet-name>
+        <servlet-class>com.ss.reminder.server.NoCacheJsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>com.ss.reminder.server.TestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>checkUsers</servlet-name>
+        <servlet-class>com.ss.reminder.server.CheckUsersCronTask</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>sendEmailTask</servlet-name>
+        <servlet-class>com.ss.reminder.server.SendEmailTask</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sendVerifyEmailTask</servlet-name>
+        <servlet-class>com.ss.reminder.server.SendVerifyEmailTask</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApiServlet</servlet-name>
+        <servlet-class>com.ss.reminder.server.ReminderApiServlet</servlet-class>
+    </servlet>
+	
+	<servlet-mapping>
+        <servlet-name>NoCacheServlet</servlet-name>
+        <url-pattern>*.nocache.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActionsServlet</servlet-name>
+        <url-pattern>/cmd/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkUsers</servlet-name>
+        <url-pattern>/cron/checkusers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendEmailTask</servlet-name>
+        <url-pattern>/tasks/sendemail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendVerifyEmailTask</servlet-name>
+        <url-pattern>/tasks/sendverifyemail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApiServlet</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/test</url-pattern>
+            <url-pattern>/cron/*</url-pattern>
+            <url-pattern>/tasks/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+	
+</web-app>

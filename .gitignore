@@ -1,0 +1,6 @@
+/build/
+/war/reminder/
+/gwt-unitCache/
+/.gwt-tmp/
+/war/WEB-INF/classes/
+/war/WEB-INF/deploy/
