@@ -9,6 +9,10 @@
 	  <div class="rmnd-top">
 	       <a class="logo" href="http://reminder.sinica.me">SSReminder</a>
 	       <div class="logo-text">service, which helps you to remember important dates</div>
+	       
+	       <div class="rmnd-source-w">
+                <a class="rmnd-source-link" href="https://github.com/ssinica/ssreminder">Source code on github</a>
+           </div>
 	  </div>
 	  
 	  <div class="rmnd-collage">
@@ -32,6 +36,6 @@
        <div class="rmnd-fld rmnd-btn-w">
             <a class="btn btn-large btn-success rmnd-btn" ui:field="elBtn"><i class="icon-share icon-white"></i>Remember</a>
        </div>
-        
+               
 	</g:HTMLPanel>
 </ui:UiBinder> 

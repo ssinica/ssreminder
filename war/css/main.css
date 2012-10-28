@@ -48,6 +48,7 @@ ul, ol {
 	border-bottom: 1px solid #e9e9e9;
 	text-align: left;
 	padding: 20px 0 10px 0;		
+	position: relative;
 	}
 	.rmnd-top .logo {
 	   color:#AAD722;
@@ -103,4 +104,20 @@ ul, ol {
 	height: 250px;
 	border-bottom: 1px solid #E9E9E9;	
 	margin: 0px auto 30px auto;
-	}    
+	}  
+	
+.rmnd-source-w {
+    position: absolute;
+    right: 10px;
+    top: 0px;    	
+    }
+.rmnd-source-link {
+    color: #999;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 11px;	
+    }
+    .rmnd-source-link:hover {
+        text-decoration: underline;
+        color: #666;
+        }

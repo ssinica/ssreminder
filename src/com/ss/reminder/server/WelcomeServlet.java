@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 @SuppressWarnings("serial")
 public class WelcomeServlet extends HttpServlet {
 
-	public static final int STATIC_FILES_VERSION = 4;
+	public static final int STATIC_FILES_VERSION = 5;
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -1,4 +1,4 @@
-[ssreminder](http://ssinica.github.com/ssreminder/)
+[ssreminder](http://github.com/ssinica/ssreminder/)
 =========== 
 
 SSReminder is a service which helps you to remember important dates.
