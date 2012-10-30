@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang3.StringUtils;
-
 @SuppressWarnings("serial")
 public class WelcomeServlet extends HttpServlet {
 
@@ -37,13 +35,9 @@ public class WelcomeServlet extends HttpServlet {
 
 		String title = "SSReminder";
 
-		// google analitics
-		String gag = "";
-		String gagDomain = "";
-		String gagTrack = "";
-		if (!StringUtils.isEmpty(gagDomain) && !StringUtils.isEmpty(gagTrack)) {
-			gag = genGoogleAnaliticsScript(gagTrack, gagDomain);
-		}
+		// google analitics		
+		String gagTrack = "UA-35920539-1";
+		String gag = genGoogleAnaliticsScript(gagTrack);
 
 		String html = "<!doctype html>"
 		        + "<html>"
@@ -70,12 +64,12 @@ public class WelcomeServlet extends HttpServlet {
 		wr.flush();
 	}
 
-	private String genGoogleAnaliticsScript(String trackingCode, String domainName) {
+	private String genGoogleAnaliticsScript(String trackingCode) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<script type='text/javascript'>");
 		sb.append("var _gaq = _gaq || [];");
 		sb.append("_gaq.push(['_setAccount', '" + trackingCode + "']);");
-		sb.append("_gaq.push(['_setDomainName', '" + domainName + "']);");
+		//sb.append("_gaq.push(['_setDomainName', '" + domainName + "']);");
 		sb.append("_gaq.push(['_trackPageview']);");
 		sb.append("(function() {");
 		sb.append("var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;");
